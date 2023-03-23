@@ -6,3 +6,8 @@ export type ItemType = {
   amount: number;
   price: number;
 };
+
+export type CartType = {
+  items: ItemType[];
+  totalAmount: number;
+};

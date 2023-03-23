@@ -9,6 +9,7 @@ interface HeaderCartButtonProps {
 
 const HeaderCartButton = (props: HeaderCartButtonProps) => {
   const cartCtx = useContext(CartContext);
+  console.log(cartCtx.items);
   const numberOfCartItems = cartCtx.items.reduce(
     (curNumber: any, item: any) => {
       return curNumber + item.amount;
