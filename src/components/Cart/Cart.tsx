@@ -15,11 +15,11 @@ const Cart = (props: CartProps) => {
   const hasItems: boolean = cartCtx.items.length > 0;
 
   const cartItemRemoveHandler = (id: string) => {
-    console.log("Bye");
+    cartCtx.removeItem(id);
   };
 
   const cartItemAddHandler = (item: ItemType) => {
-    console.log("Helllloooo");
+    cartCtx.addItem({ ...item, amount: 1 });
   };
 
   const cartItems = (
