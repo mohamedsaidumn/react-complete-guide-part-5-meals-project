@@ -1,10 +1,13 @@
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import classes from "./CartItem.module.css";
+import { ItemType } from "../../types/types";
 
 interface CartItemProps {
   name: string;
   amount: number;
   price: number;
+  onAdd: any;
+  onRemove: any;
 }
 
 const CartItem = (props: CartItemProps) => {
@@ -19,10 +22,10 @@ const CartItem = (props: CartItemProps) => {
           <span className={classes.amount}>x {props.amount}</span>
         </div>
       </div>
-      {/* <div className={classes.actions}>
+      <div className={classes.actions}>
         <button onClick={props.onRemove}>−</button>
         <button onClick={props.onAdd}>+</button>
-      </div> */}
+      </div>
     </li>
   );
 };
