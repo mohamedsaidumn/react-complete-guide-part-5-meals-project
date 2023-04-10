@@ -11,3 +11,10 @@ export type CartType = {
   items: ItemType[];
   totalAmount: number;
 };
+
+export type UserDataType = {
+  name: string;
+  street: string;
+  city: string;
+  postalCode: string;
+};

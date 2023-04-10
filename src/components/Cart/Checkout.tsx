@@ -1,9 +1,11 @@
 import React, { useRef, useState } from "react";
 import { FormEvent } from "react";
 import classes from "./Checkout.module.css";
+import { UserDataType } from "../../types/types";
 
 interface CheckoutProps {
   onCancel: () => void;
+  onConfirm: (userData: UserDataType) => void;
 }
 
 interface formInputsValidityType {
@@ -71,6 +73,13 @@ const Checkout = (props: CheckoutProps) => {
     if (!formIsValid) {
       return;
     }
+
+    props.onConfirm({
+      name: enteredName,
+      street: enteredStreet,
+      city: enteredCity,
+      postalCode: enteredPostalCode,
+    });
   };
 
   const nameControlClasses = `${classes.control} ${
